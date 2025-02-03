@@ -68,6 +68,27 @@ class BinaryTree {
             System.out.println(root.val);
         }
         achadekhnaha(root.rchild,level+1);
+    }
+    /** Level order traversal in binary tree is same as breadth first traversal**/
+    /**
+    BFS: breadth first search traveses all the node in whole breath of a particular node
+    **/
+    public void levelOrderTraversal(Node root){
+        lOt(root);
+    }
+    private void lOt(Node root){
+        Queue<Node> qu = new LinkedList<Node>();
+        qu.add(root);
+        while(!qu.isEmpty()){
+            Node current = qu.remove();
+            if(current.lchild!=null){
+                qu.add(current.lchild);
+            }
+            if(current.rchild!=null){
+                qu.add(current.rchild);
+            }
+            System.out.print(current.val+ " ");
+        }
 
     }
 }
